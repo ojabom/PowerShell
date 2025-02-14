@@ -16,6 +16,7 @@ $lastNames = @("Doe", "Smith", "Johnson", "Williams", "Brown", "Jones", "Garcia"
 $cities = @("New York", "Los Angeles", "Chicago", "Houston", "Phoenix", "Philadelphia", "San Antonio", "San Diego", "Dallas", "San Jose")
 $states = @("NY", "CA", "IL", "TX", "AZ", "PA", "FL", "OH", "GA", "NC")
 $countries = @("USA")
+$departments = @("HR", "Finance", "IT", "Marketing", "Sales", "Operations", "Customer Support", "R&D", "Legal", "Administration")
 
 # Function to generate a random phone number
 function Get-RandomPhoneNumber {
@@ -63,6 +64,7 @@ for ($i = 1; $i -le $recordCount; $i++) {
     $state = Get-Random -InputObject $states
     $zipCode = Get-RandomZipCode
     $country = Get-Random -InputObject $countries
+    $department = Get-Random -InputObject $departments
 
     $data += [PSCustomObject]@{
         ID          = $i
@@ -75,6 +77,7 @@ for ($i = 1; $i -le $recordCount; $i++) {
         State       = $state
         ZipCode     = $zipCode
         Country     = $country
+        Department  = $department
     }
 }
 
